@@ -1,0 +1,14 @@
+ <p>
+      <strong>{{question.text}}</strong>
+    </p>
+    <div class="indent">
+      <div *ngFor="let option of question.options">
+        <label>
+          <input type="radio" [name]="question.id" [value]="option.id"
+            (click)="answer.emit($event.target.value)" [disabled]="checked">
+          {{option.text}}
+        </label>
+      </div>
+      <p *ngIf="correct === true">✔ Correct</p>
+      <p *ngIf="correct === false">✘ Incorrect</p>
+    </div>

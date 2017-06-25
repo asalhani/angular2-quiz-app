@@ -1,0 +1,10 @@
+ <question *ngFor="let question of questions"
+      [question]="question" (answer)="onAnswer(question.id, $event)"
+      [correct]="isCorrect(question.id)"></question>
+    <p *ngIf="!checked">
+      <button (click)="check()">Check</button>
+    </p>
+    <p *ngIf="checked">
+      Score: {{correctAnswers.size}} / {{questions.length}}
+      ({{ correctAnswers.size / questions.length | percent }})
+    </p>
