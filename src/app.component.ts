@@ -8,7 +8,7 @@ import { QuizService } from './quiz.service';
 })
 export class AppComponent {
 
-  questions: Question[];
+  questions: Question[]; 
   correctAnswers: Set<string>;
 
   private answers = new Map<string, string>();
